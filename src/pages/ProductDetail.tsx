@@ -61,7 +61,7 @@ const ProductDetail = () => {
       toast.info("Already in your cart!", { description: "Open the cart to review or checkout." });
       return;
     }
-    const sellingPlanId = product.sellingPlanGroups?.edges?.[0]?.node?.sellingPlans?.edges?.[0]?.node?.id;
+    const sellingPlanId = "gid://shopify/SellingPlan/698514473239";
     await addItem({
       product: { node: product },
       variantId: selectedVariant.id,

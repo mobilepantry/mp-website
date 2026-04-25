@@ -133,21 +133,7 @@ export const STOREFRONT_PRODUCTS_QUERY = `
               }
             }
           }
-          sellingPlanGroups(first: 5) {
-            edges {
-              node {
-                name
-                sellingPlans(first: 5) {
-                  edges {
-                    node {
-                      id
-                      name
-                    }
-                  }
-                }
-              }
-            }
-          }
+
           options {
             name
             values
@@ -196,21 +182,7 @@ export const STOREFRONT_PRODUCT_QUERY = `
           }
         }
       }
-      sellingPlanGroups(first: 5) {
-        edges {
-          node {
-            name
-            sellingPlans(first: 5) {
-              edges {
-                node {
-                  id
-                  name
-                }
-              }
-            }
-          }
-        }
-      }
+
       options {
         name
         values
