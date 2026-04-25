@@ -1,5 +1,6 @@
-import logoFull from "@/assets/logo-full.png";
-import fruitIcons from "@/assets/fruit-icons.png";
+import { Picture } from "@/components/Picture";
+import logoFull from "@/assets/logo-full.png?w=240;480&format=avif;webp;png&as=picture";
+import fruitIcons from "@/assets/fruit-icons.png?w=480;960&format=avif;webp;png&as=picture";
 
 export const Footer = () => (
   <footer className="bg-white border-t border-primary/10">
@@ -7,7 +8,7 @@ export const Footer = () => (
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         {/* Left side */}
         <div className="flex flex-col items-start gap-3">
-          <img src={logoFull} alt="MobilePantry" className="h-14" />
+          <Picture data={logoFull} alt="MobilePantry" className="h-14 w-auto" loading="lazy" />
           <p className="text-primary font-semibold text-lg">
             A Market on a Mission!
           </p>
@@ -21,7 +22,7 @@ export const Footer = () => (
 
         {/* Right side - fruit icons */}
         <div className="flex-shrink-0">
-          <img src={fruitIcons} alt="Fresh fruits and vegetables" className="h-20 md:h-24" />
+          <Picture data={fruitIcons} alt="Fresh fruits and vegetables" className="h-20 md:h-24 w-auto" loading="lazy" />
         </div>
       </div>
 

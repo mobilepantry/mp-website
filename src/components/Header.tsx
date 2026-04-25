@@ -3,7 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { CartDrawer } from "@/components/CartDrawer";
-import logoHeader from "@/assets/logo-header.png";
+import { Picture } from "@/components/Picture";
+import logoHeader from "@/assets/logo-header.png?w=240;480&format=avif;webp;png&as=picture";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -20,7 +21,7 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 gap-3">
         <Link to="/" className="flex items-center flex-shrink-0">
-          <img src={logoHeader} alt="MobilePantry" className="h-7 object-contain" />
+          <Picture data={logoHeader} alt="MobilePantry" className="h-7 w-auto object-contain" fetchPriority="high" />
         </Link>
 
         <nav className="hidden md:flex items-center justify-center gap-8 flex-1">

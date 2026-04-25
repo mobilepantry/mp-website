@@ -1,16 +1,23 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SlotCounter } from "@/components/SlotCounter";
-import aboutHero from "@/assets/about-hero.jpg";
-import heroCommunity from "@/assets/hero-community.jpg";
-import visionDiagram from "@/assets/vision-diagram.png";
+import { Picture } from "@/components/Picture";
+import aboutHero from "@/assets/about-hero.jpg?w=640;1024;1920&format=avif;webp;jpg&as=picture";
+import heroCommunity from "@/assets/hero-community.jpg?w=480;960&format=avif;webp;jpg&as=picture";
+import visionDiagram from "@/assets/vision-diagram.png?w=480;960&format=avif;webp;png&as=picture";
 
 const About = () => (
   <div>
     {/* Full-bleed Hero */}
     <section className="relative min-h-[50vh] flex items-center justify-center">
       <div className="absolute inset-0">
-        <img src={aboutHero} alt="Fresh produce" className="w-full h-full object-cover" width={1920} height={960} />
+        <Picture
+          data={aboutHero}
+          alt="Fresh produce"
+          className="w-full h-full object-cover"
+          sizes="100vw"
+          fetchPriority="high"
+        />
         <div className="absolute inset-0 bg-foreground/60" />
       </div>
       <div className="relative text-center px-4 py-32 pt-40">
@@ -26,7 +33,13 @@ const About = () => (
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
           {/* Flow diagram with frame */}
           <div className="flex items-center justify-center">
-            <img src={visionDiagram} alt="MobilePantry vision: Produce Markets, Farms, and Grocery Stores flow through MobilePantry to Paid Subscribers and Families in Need" className="w-full max-w-md object-contain" />
+            <Picture
+              data={visionDiagram}
+              alt="MobilePantry vision: Produce Markets, Farms, and Grocery Stores flow through MobilePantry to Paid Subscribers and Families in Need"
+              className="w-full max-w-md object-contain"
+              sizes="(min-width: 768px) 448px, 100vw"
+              loading="lazy"
+            />
           </div>
 
           <div>
@@ -81,13 +94,12 @@ const About = () => (
           <div className="relative p-4">
             <div className="absolute inset-0 rounded-3xl bg-primary" />
             <div className="absolute top-2 left-2 right-2 bottom-2 rounded-2xl bg-primary" />
-            <img
-              src={heroCommunity}
+            <Picture
+              data={heroCommunity}
               alt="Fresh produce distribution"
               className="rounded-2xl w-full relative z-10"
+              sizes="(min-width: 768px) 448px, 100vw"
               loading="lazy"
-              width={1920}
-              height={960}
             />
           </div>
         </div>
@@ -135,7 +147,13 @@ const About = () => (
     {/* Bottom CTA */}
     <section className="relative py-28 md:py-36">
       <div className="absolute inset-0">
-        <img src={aboutHero} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <Picture
+          data={aboutHero}
+          alt=""
+          className="w-full h-full object-cover"
+          sizes="100vw"
+          loading="lazy"
+        />
         <div className="absolute inset-0 bg-foreground/70" />
       </div>
       <div className="relative container mx-auto px-4 text-center">

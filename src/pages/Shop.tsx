@@ -5,7 +5,8 @@ import { Loader2, ShoppingBag } from "lucide-react";
 import { storefrontApiRequest, STOREFRONT_PRODUCTS_QUERY, type ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
-import shopHero from "@/assets/shop-hero.jpg";
+import { Picture } from "@/components/Picture";
+import shopHero from "@/assets/shop-hero.jpg?w=640;1024;1280&format=avif;webp;jpg&as=picture";
 
 const Shop = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -54,7 +55,13 @@ const Shop = () => {
       {/* Shop Hero */}
       <section className="relative min-h-[45vh] flex items-center">
         <div className="absolute inset-0">
-          <img src={shopHero} alt="Fresh produce market" className="w-full h-full object-cover" width={1280} height={854} />
+          <Picture
+            data={shopHero}
+            alt="Fresh produce market"
+            className="w-full h-full object-cover"
+            sizes="100vw"
+            fetchPriority="high"
+          />
           <div className="absolute inset-0 bg-foreground/60" />
         </div>
         <div className="relative container mx-auto px-4 py-28 pt-36 text-center">

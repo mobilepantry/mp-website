@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Picture } from "@/components/Picture";
 import { Heart } from "lucide-react";
-import heroProduce from "@/assets/hero-produce.jpg";
-import heroCommunity from "@/assets/hero-community.jpg";
-import whyMobilePantryBox from "@/assets/why-mobilepantry-box.png";
+import heroProduce from "@/assets/hero-produce.jpg?w=640;1024;1920&format=avif;webp;jpg&as=picture";
+import heroCommunity from "@/assets/hero-community.jpg?w=640;1024;1920&format=avif;webp;jpg&as=picture";
+import whyMobilePantryBox from "@/assets/why-mobilepantry-box.png?w=480;960&format=avif;webp;png&as=picture";
 
 const Index = () => {
   return (
@@ -11,12 +12,12 @@ const Index = () => {
       {/* Full-bleed Hero */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
-          <img
-            src={heroProduce}
+          <Picture
+            data={heroProduce}
             alt="MobilePantry volunteers distributing fresh produce boxes"
             className="w-full h-full object-cover"
-            width={1920}
-            height={960}
+            sizes="100vw"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-foreground/60" />
         </div>
@@ -128,10 +129,11 @@ const Index = () => {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              <img
-                src={whyMobilePantryBox}
+              <Picture
+                data={whyMobilePantryBox}
                 alt="MobilePantry produce box"
                 className="w-full max-w-md relative z-10"
+                sizes="(min-width: 768px) 448px, 100vw"
                 loading="lazy"
               />
             </div>
@@ -155,7 +157,13 @@ const Index = () => {
       {/* Full-bleed CTA */}
       <section className="relative py-28 md:py-36">
         <div className="absolute inset-0">
-          <img src={heroCommunity} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <Picture
+            data={heroCommunity}
+            alt=""
+            className="w-full h-full object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-primary" />
         </div>
         <div className="relative container mx-auto px-4 text-center">
